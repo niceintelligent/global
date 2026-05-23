@@ -151,7 +151,7 @@
                 const server = await bleDevice.gatt.connect();
                 
                 document.getElementById('statusText').innerText = "状态: 正在获取服务及特征...";
-                const service = await server.getPrimaryService(SERVICE_UUID);
+                const service = await server.getService(SERVICE_UUID);
                 bleCharacteristic = await service.getCharacteristic(CHARACTERISTIC_UUID);
 
                 // 监听 ESP32 推送上来的重量数据
